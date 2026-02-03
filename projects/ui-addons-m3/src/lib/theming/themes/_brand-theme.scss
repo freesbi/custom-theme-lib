@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use '../palettes/brand-colors' as brand; // no underscore, no .scss
+
+// Optional: also apply your library component styling mixin
+@use '../ui-kit-components' as uiKitComponents;
+
+@mixin apply($typography: Roboto, $density: 0) {
+  @include mat.theme((
+    color: (
+      primary: brand.$primary-palette,
+      tertiary: brand.$tertiary-palette,
+      // include other palettes only if your generated file provides them
+    ),
+    typography: $typography,
+    density: $density,
+  ));
+
+  // Your library's own component styling (consumes --mat-sys-* vars)
+  @include uiKitComponents.apply();
+}

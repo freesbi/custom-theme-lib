@@ -1,0 +1,17 @@
+@mixin apply() {
+  /* Card */
+  .ui-card {
+    background: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+    border-radius: 16px;
+  }
+
+  .ui-card--outlined {
+    border: 1px solid var(--mat-sys-outline);
+  }
+
+  /* Button wrapper tweaks */
+  .ui-button {
+    border-radius: 999px;
+  }
+}

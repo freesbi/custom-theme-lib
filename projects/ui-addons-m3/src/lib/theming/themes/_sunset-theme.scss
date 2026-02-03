@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use '../palettes/sunset-colors' as sunset; // no underscore, no .scss
+
+// Optional: also apply your library component styling mixin
+@use '../ui-kit-components' as uiKitComponents;
+
+@mixin apply($typography: Roboto, $density: 0) {
+  @include mat.theme((
+    color: (
+      primary: sunset.$primary-palette,
+      tertiary: sunset.$tertiary-palette,
+      // include other palettes only if your generated file provides them
+    ),
+    typography: $typography,
+    density: $density,
+  ));
+
+  // Your library's own component styling (consumes --mat-sys-* vars)
+  @include uiKitComponents.apply();
+}
